@@ -50,4 +50,8 @@ class Event
     end
     total_inventory_hash
   end
+
+  def overstocked_items
+    item_list.select { |item| total_quantity(item) > 50 && food_trucks_that_sell(item).count > 1 }
+  end
 end
