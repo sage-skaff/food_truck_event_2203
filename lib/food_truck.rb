@@ -7,7 +7,7 @@ class FoodTruck
   end
 
   def check_stock(item)
-    @inventory[item] = 0 if @inventory[item].nil?
-    @inventory[item]
+    inventory[item] = 0 if inventory[item].nil?
+    inventory[item]
   end
 end
