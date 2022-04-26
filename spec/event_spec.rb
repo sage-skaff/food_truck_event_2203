@@ -98,7 +98,7 @@ RSpec.describe Event do
       expect(@event.total_quantity(@item1)).to eq(100)
     end
 
-    xit "can list total inventory" do
+    it "can list total inventory" do
       expect(@event.total_inventory).to eq({
         @item1 => {quantity: 100, food_trucks: [@food_truck1, @food_truck3]},
         @item2 => {quantity: 7,   food_trucks: [@food_truck1]},

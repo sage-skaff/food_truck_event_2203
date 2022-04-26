@@ -35,4 +35,19 @@ class Event
     end
     items.uniq
   end
+
+  def total_quantity(item)
+    food_trucks.sum { |food_truck| food_truck.check_stock(item)}
+  end
+
+  def total_inventory
+    total_inventory_hash = {}
+    item_list.each do |item|
+      total_inventory_hash[item] = {
+        quantity: total_quantity(item),
+        food_trucks: food_trucks_that_sell(item)
+      }
+    end
+    total_inventory_hash
+  end
 end
