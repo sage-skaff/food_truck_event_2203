@@ -23,12 +23,16 @@ class Event
   end
 
   def sorted_item_list
+    item_list.sort_by { |item| item.name }
+  end
+
+  def item_list
     items = []
     food_trucks.each do |food_truck|
       food_truck.inventory.keys.each do |item|
         items << item
       end
     end
-    items.sort_by { |item| item.name }.uniq
+    items.uniq
   end
 end
