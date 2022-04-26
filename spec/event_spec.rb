@@ -90,11 +90,15 @@ RSpec.describe Event do
       expect(@event.sorted_item_list).to eq([@item2, @item4, @item1, @item3])
     end
 
-    it "can list overstocked items" do
+    xit "can list overstocked items" do
       expect(@event.overstocked_items).to eq([@item1])
     end
 
-    it "can list total inventory" do
+    it "can find the total quantity of an item" do
+      expect(@event.total_quantity(@item1)).to eq(100)
+    end
+
+    xit "can list total inventory" do
       expect(@event.total_inventory).to eq({
         @item1 => {quantity: 100, food_trucks: [@food_truck1, @food_truck3]},
         @item2 => {quantity: 7,   food_trucks: [@food_truck1]},
