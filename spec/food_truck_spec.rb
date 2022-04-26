@@ -14,6 +14,16 @@ RSpec.describe FoodTruck do
       expect(@food_truck).to be_a(FoodTruck)
     end
 
+    it "has readable attributes" do
+      expect(@food_truck.name).to eq("Rocky Mountain Pies")
+    end
 
+    it "has no inventory by default" do
+      expect(@food_truck.inventory).to eq({})
+    end
+
+    it "can check if an item is in stock" do
+      expect(@food_truck.check_stock(@item1)).to eq(0)
+    end
   end
 end
