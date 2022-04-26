@@ -13,5 +13,7 @@ RSpec.describe FoodTruck do
     it "exists" do
       expect(@food_truck).to be_a(FoodTruck)
     end
+
+
   end
 end
