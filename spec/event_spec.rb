@@ -82,6 +82,10 @@ RSpec.describe Event do
       @event.add_food_truck(@food_truck3)
     end
 
+    it "can list items" do
+      expect(@event.item_list).to eq([@item1, @item2, @item4, @item3])
+    end
+
     it "can list items sorted by name" do
       expect(@event.sorted_item_list).to eq([@item2, @item4, @item1, @item3])
     end
