@@ -1,3 +1,5 @@
+require "./lib/food_truck"
+
 class Event
   attr_reader :name, :food_trucks
 
@@ -16,7 +18,17 @@ class Event
 
   def food_trucks_that_sell(item)
     food_trucks.map do |food_truck|
-       food_truck if food_truck.check_stock(item) > 0 
+       food_truck if food_truck.check_stock(item) > 0
      end.compact
+  end
+
+  def sorted_item_list
+    items = []
+    food_trucks.each do |food_truck|
+      food_truck.inventory.keys.each do |item|
+        items << item
+      end
+    end
+    items.sort_by { |item| item.name }.uniq
   end
 end
