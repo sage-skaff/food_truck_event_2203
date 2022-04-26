@@ -25,5 +25,6 @@ RSpec.describe FoodTruck do
     it "can check if an item is in stock" do
       expect(@food_truck.check_stock(@item1)).to eq(0)
     end
+    
   end
 end
