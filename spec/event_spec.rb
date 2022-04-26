@@ -17,5 +17,13 @@ RSpec.describe Event do
     it "exists" do
       expect(@event).to be_a(Event)
     end
+
+    it "has readable attributes" do
+      expect(@event.name).to eq("South Pearl Street Farmers Market")
+    end
+
+    it "has no food trucks by default" do
+      expect(@event.food_trucks).to eq([])
+    end
   end
 end
